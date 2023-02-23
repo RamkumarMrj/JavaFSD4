@@ -18,7 +18,7 @@ export class QuestionComponent implements OnInit {
   inCorrectAnswer: number = 0;
   interval$: any;
   progress: string = "0";
-  isQuizCompleted : boolean = false;
+  isQuizCompleted: boolean = false;
   // QuestionService imported from question services
   constructor(private questionService: QuestionService) { }
 
@@ -47,7 +47,7 @@ export class QuestionComponent implements OnInit {
   // answer fun() - with parameter of question & their options
   answer(currentQno: number, option: any) {
 
-    if(currentQno === this.questionList.length){
+    if (currentQno === this.questionList.length) {
       this.isQuizCompleted = true;
       this.stopCounter();
     }
@@ -60,8 +60,8 @@ export class QuestionComponent implements OnInit {
         this.resetCounter();  // reset timer
         this.getProgressPercent();  // increase progressbar percentage
       }, 1000);
-    } 
-    else 
+    }
+    else
     // if we selected wrong ans !
     {
       setTimeout(() => {
